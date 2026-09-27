@@ -18,7 +18,7 @@ public final class BetterChunkCulling {
 
     public static final String MODID = "betterchunkculling";
     public static final String NAME = "Better Chunk Culling";
-    public static final String VERSION = "1.0";
+    public static final String VERSION = "1.1";
 
     public static final String DEPENDENCIES = "required-after:mixinbooter";
 
