@@ -1,12 +1,31 @@
-// SPDX-License-Identifier: GPL-3.0-or-later
+/*
+ *   Copyright (c) 2026 0xNull
+ *
+ *   This program is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   This program is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
 package com.oxnull.betterchunkculling;
 
+import meldexun.nothirium.mc.Nothirium;
+import net.minecraft.world.chunk.Chunk;
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
+import scala.reflect.internal.Trees.If;
+import scala.reflect.internal.Trees.This;
 
 /**
 * Configuracion del mod
@@ -51,6 +70,23 @@ public final class BCCConfig {
     })
     @Config.Name("debug")
     public static volatile boolean debug = false;
+
+    @Config.Comment({
+        "Enable Nothirium compatibility",
+        "This only takes effect if Nothirium is installed",
+        "If disabled, Better Chunk Culling will not apply culling",
+        "when Nothirium is present, because Nothirium replaces",
+        "the vanilla rendering pipeline"
+    })
+    @Config.Name("enableNothiriumCompat")
+    public static volatile boolean enableNothiriumCompat = true;
+    
+    @Config.Comment({
+        "Enable visual chunk culling",
+        "Discard chunks outside the ellipsoid during rendering"
+    })
+    @Config.Name("enableVisualCulling")
+    public static volatile boolean enableVisualCulling = true;
 
     // Actualiza la configuracion si se cambia
     @Mod.EventBusSubscriber(

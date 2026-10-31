@@ -17,7 +17,7 @@ apply plugin: 'idea'
 apply plugin: 'eclipse'
 apply plugin: 'com.gtnewhorizons.retrofuturagradle'
 
-version = "1.1"
+version = "1.2"
 group = "com.oxnull.betterchunkculling"
 
 base {
@@ -43,6 +43,9 @@ repositories {
         name = 'CleanroomMC'
         url = 'https://maven.cleanroommc.com'
     }
+    maven {
+        url "https://cursemaven.com"
+    }
 }
 
 dependencies {
@@ -54,6 +57,8 @@ dependencies {
         transitive = false
     }
     annotationProcessor mixin
+    compileOnly rfg.deobf('curse.maven:renderlib-624967:6461209')
+    compileOnly rfg.deobf('curse.maven:nothirium-624960:7441674')
 }
 
 tasks.named('processResources', ProcessResources).configure {
@@ -73,7 +78,7 @@ tasks.named('jar', Jar).configure {
     
     manifest {
         attributes([
-            'MixinConfigs': 'mixins.betterchunkculling.json'
+            'MixinConfigs': 'mixins.betterchunkculling.json,mixins.betterchunkculling.nothirium.json'
         ])
     }
 }

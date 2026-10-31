@@ -5,10 +5,10 @@
     "description": "Ellipsoid-based chunk rendering to reduce unnecessary chunks and caves that are not visible to the naked eye",
     "version": "${version}",
     "mcversion": "1.12.2",
-    "url": "https://github.com/Onyx-i7/BetterChunkCulling",
+    "url": "https://github.com/0xNull12/BetterChunkCulling",
     "updateUrl": "",
     "authorList": [
-      "Onyx_i7"
+      "0xNull"
     ],
     "credits": "It came about as a result of a late-night Google search (Better Render Distance fork 1.12.2) and 3D geometry adapted to work on older computers. Thanks a lot, Google.",
     "logoFile": "",
@@ -17,7 +17,7 @@
       "mixinbooter"
     ],
     "modProperties": {
-		"issueTrackerUrl": "https://github.com/Onyx-i7/BetterChunkCulling/issues",
+		"issueTrackerUrl": "https://github.com/0xNull12/BetterChunkCulling/issues",
 		"license": "GPL-3.0-or-later"
 	}
   }
